@@ -38,3 +38,6 @@
 ### Utilisation de useEffect 
 
 - Au changement du brut pour avoir un re-rendu instantané lors de l'entrée du salaire brut
+- Au changement du net pour avoir un re-rendu instantané lors de l'entrée du salaire net
+- Utilisation de bool pour verrouiller le calcul sur l'autre champs
+- Fix de la formule de calcul du net en brut
