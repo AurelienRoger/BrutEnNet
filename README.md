@@ -24,4 +24,11 @@
 ### Control des champs de formulaire
 
 - Controle du champs en Brut
--Controle du champs en Net
+- Controle du champs en Net
+
+## Etape 4
+
+### Calcul du brut en net et vice versa
+
+- Si Salaire brut rentré, enlever 23%
+- Si salaire net rentré, ajouter 23%
