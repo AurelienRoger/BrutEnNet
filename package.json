@@ -49,8 +49,10 @@
     "webpack-merge": "*"
   },
   "dependencies": {
+    "fomantic-ui": "^2.9.2",
     "prop-types": "*",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "semantic-ui-react": "^2.1.4"
   }
 }
