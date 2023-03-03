@@ -32,3 +32,9 @@
 
 - Si Salaire brut rentré, enlever 23%
 - Si salaire net rentré, ajouter 23%
+
+## Etape 5
+
+### Utilisation de useEffect 
+
+- Au changement du brut pour avoir un re-rendu instantané lors de l'entrée du salaire brut

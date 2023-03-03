@@ -6,24 +6,41 @@ import { Form } from 'semantic-ui-react';
 function FormConvert() {
   const [brut, setBrut] = useState(0);
   const [net, setNet] = useState(0);
+  const [isBrut, setIsBrut] = useState(false);
+  const [isNet, setIsNet] = useState(false);
 
   const calculSalaireBrutNet = (brutNumber) => {
     const result = brutNumber - ((brutNumber * 23) / 100);
     setNet(result);
   };
 
+  const calculSalaireNetBrut = (netNumber) => {
+    const result = (1 + (23 / 100)) * netNumber;
+    setBrut(result);
+  };
+
   useEffect(() => {
-    calculSalaireBrutNet(brut);
+    if (isBrut) {
+      calculSalaireBrutNet(brut);
+    }
   }, [brut]);
 
+  useEffect(() => {
+    if (isNet) {
+      calculSalaireNetBrut(net);
+    }
+  }, [net]);
+
   const handleChangeValueBrut = (event) => {
+    setIsBrut(true);
+    setIsNet(false);
     setBrut(event.target.value);
-    const result = brut - ((brut * 23) / 100);
-    setNet(result);
     // calculSalaireBrutNet(brut);
   };
 
   const handleChangeValueNet = (event) => {
+    setIsBrut(false);
+    setIsNet(true);
     setNet(event.target.value);
   };
 
