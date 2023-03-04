@@ -10,12 +10,12 @@ function FormConvert() {
   const [isNet, setIsNet] = useState(false);
 
   const calculSalaireBrutNet = (brutNumber) => {
-    const result = brutNumber - ((brutNumber * 23) / 100);
+    const result = Math.round((1 - 0.23) * brutNumber);
     setNet(result);
   };
 
   const calculSalaireNetBrut = (netNumber) => {
-    const result = (1 + (23 / 100)) * netNumber;
+    const result = ((1.08 + 0.23) * netNumber).toFixed(2);
     setBrut(result);
   };
 

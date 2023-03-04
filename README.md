@@ -41,3 +41,10 @@
 - Au changement du net pour avoir un re-rendu instantané lors de l'entrée du salaire net
 - Utilisation de bool pour verrouiller le calcul sur l'autre champs
 - Fix de la formule de calcul du net en brut
+- Arrondir les chiffre à la sortie à 2 chiffre après la virgule
+
+## Etape 5
+
+### Ajout d'un composant
+
+- Ajout d'un composant Header
