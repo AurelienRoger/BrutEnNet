@@ -25,6 +25,7 @@
 
 - Controle du champs en Brut
 - Controle du champs en Net
+- Ajout type "number" pour les Inputs
 
 ## Etape 4
 
