@@ -3,7 +3,7 @@ import { Header } from 'semantic-ui-react';
 
 function HeaderComp() {
   return (
-    <Header as="h3" dividing>
+    <Header as="h3" dividing color="olive">
       Calcul Salaire Brut en Net ou inversement
     </Header>
   );
