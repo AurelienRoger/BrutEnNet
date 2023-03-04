@@ -49,13 +49,13 @@ function FormConvert() {
       <Form.Field>
         <label htmlFor="brut">
           Salaire Mensuel Brut
-          <input placeholder="Salaire Mensuel Brut" value={brut} name="brut" onChange={handleChangeValueBrut} />
+          <input type="number" placeholder="Salaire Mensuel Brut" value={brut} name="brut" onChange={handleChangeValueBrut} />
         </label>
       </Form.Field>
       <Form.Field>
         <label htmlFor="net">
           Salaire Mensuel Net
-          <input placeholder="Salaire Mensuel Net" value={net} onChange={handleChangeValueNet} />
+          <input type="number" placeholder="Salaire Mensuel Net" value={net} onChange={handleChangeValueNet} />
         </label>
 
       </Form.Field>
