@@ -63,3 +63,9 @@
 
 - Factorisation des form.group 
 - Modification des function pour affichage des taux horaire lors d'une entré
+
+## Etape 8
+
+### Ajout des fonctions taux horaire
+
+- Ajout de la fonction pour calculer à partir du champs de taux horaire

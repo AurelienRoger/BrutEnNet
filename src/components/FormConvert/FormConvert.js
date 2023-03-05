@@ -6,6 +6,8 @@ import { Form } from 'semantic-ui-react';
 import FormMensuel from '../../FormMensuel/FormMensuel';
 import FormHoraire from '../FormHoraire/FormHoraire';
 
+import './FormConvert.scss';
+
 function FormConvert() {
   const [brut, setBrut] = useState(0);
   const [net, setNet] = useState(0);
@@ -14,6 +16,18 @@ function FormConvert() {
 
   const [isBrut, setIsBrut] = useState(false);
   const [isNet, setIsNet] = useState(false);
+  const [isHoraireNet, setIsHoraireNet] = useState(false);
+  const [isHoraireBrut, setIsHoraireBrut] = useState(false);
+
+  const calculSalaireHoraireBrutNet = (brutHoraireNumber) => {
+    // 15 € * ((35 Heures * 52 Semaines) / 12 Mois)
+    const mensuelBrut = Math.round(brutHoraireNumber * ((35 * 52) / 12));
+    const mensuelNet = Math.round((1 - 0.23) * mensuelBrut);
+    const horaireNet = ((1 - 0.23) * brutHoraireNumber).toFixed(2);
+    setNet(mensuelNet);
+    setBrut(mensuelBrut);
+    setNetHoraire(horaireNet);
+  };
 
   const calculSalaireBrutNet = (brutNumber) => {
     const result = Math.round((1 - 0.23) * brutNumber);
@@ -33,18 +47,6 @@ function FormConvert() {
     setNetHoraire(resultNetHoraire);
   };
 
-  useEffect(() => {
-    if (isBrut) {
-      calculSalaireBrutNet(brut);
-    }
-  }, [brut]);
-
-  useEffect(() => {
-    if (isNet) {
-      calculSalaireNetBrut(net);
-    }
-  }, [net]);
-
   const handleChangeValueBrut = (event) => {
     setIsBrut(true);
     setIsNet(false);
@@ -58,15 +60,39 @@ function FormConvert() {
     setNet(event.target.value);
   };
 
+  const handleChangeValueHoraireBrut = (event) => {
+    setIsBrut(false);
+    setIsNet(false);
+    setIsHoraireBrut(true);
+    setIsHoraireNet(false);
+    setBrutHoraire(event.target.value);
+  };
+
+  useEffect(() => {
+    if (isNet) {
+      calculSalaireNetBrut(net);
+    }
+    else if (isBrut) {
+      calculSalaireBrutNet(brut);
+    }
+    else if (isHoraireBrut) {
+      calculSalaireHoraireBrutNet(brutHoraire);
+    }
+  }, [net, brut, netHoraire, brutHoraire]);
+
   return (
-    <Form>
+    <Form className="formConvert">
       <FormMensuel
         brut={brut}
         net={net}
         changeBrut={handleChangeValueBrut}
         changeNet={handleChangeValueNet}
       />
-      <FormHoraire netHoraire={netHoraire} brutHoraire={brutHoraire} />
+      <FormHoraire
+        netHoraire={netHoraire}
+        brutHoraire={brutHoraire}
+        changeHoraireBrut={handleChangeValueHoraireBrut}
+      />
     </Form>
   );
 }
