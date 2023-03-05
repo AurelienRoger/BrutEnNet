@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'semantic-ui-react';
 
-function FormHoraire({brutHoraire, netHoraire, changeHoraireBrut}) {
+function FormHoraire({
+  brutHoraire, netHoraire,
+  changeHoraireBrut, changeHoraireNet,
+}) {
   return (
     <Form.Group widths="equal">
       <Form.Field>
@@ -13,7 +16,7 @@ function FormHoraire({brutHoraire, netHoraire, changeHoraireBrut}) {
       <Form.Field>
         <label htmlFor="horairenet">
           Salaire Horaire Net
-          <input type="number" placeholder="Salaire Horaire Net" value={netHoraire} name="horairenet" />
+          <input type="number" placeholder="Salaire Horaire Net" value={netHoraire} name="horairenet" onChange={changeHoraireNet} />
         </label>
 
       </Form.Field>

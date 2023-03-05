@@ -69,3 +69,5 @@
 ### Ajout des fonctions taux horaire
 
 - Ajout de la fonction pour calculer à partir du champs de taux horaire
+- Calcul pour le taux horaire brut
+- Calcul pour le taux horaire net

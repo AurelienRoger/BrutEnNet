@@ -29,6 +29,16 @@ function FormConvert() {
     setNetHoraire(horaireNet);
   };
 
+  const calculSalaireHoraireNetBrut = (netHoraireNumber) => {
+    // 15 € * ((35 Heures * 52 Semaines) / 12 Mois)
+    const mensuelNet = Math.round(netHoraireNumber * ((35 * 52) / 12));
+    const mensuelBrut = Math.round((1 + 0.2989) * mensuelNet);
+    const horaireBrut = (mensuelBrut / ((35 * 52) / 12)).toFixed(2);
+    setNet(mensuelNet);
+    setBrut(mensuelBrut);
+    setBrutHoraire(horaireBrut);
+  };
+
   const calculSalaireBrutNet = (brutNumber) => {
     const result = Math.round((1 - 0.23) * brutNumber);
     const resultNetHoraire = (result / ((35 * 52) / 12)).toFixed(2);
@@ -50,11 +60,15 @@ function FormConvert() {
   const handleChangeValueBrut = (event) => {
     setIsBrut(true);
     setIsNet(false);
+    setIsHoraireBrut(false);
+    setIsHoraireNet(false);
     setBrut(event.target.value);
     // calculSalaireBrutNet(brut);
   };
 
   const handleChangeValueNet = (event) => {
+    setIsHoraireBrut(false);
+    setIsHoraireNet(false);
     setIsBrut(false);
     setIsNet(true);
     setNet(event.target.value);
@@ -68,6 +82,14 @@ function FormConvert() {
     setBrutHoraire(event.target.value);
   };
 
+  const handleChangeValueHoraireNet = (event) => {
+    setIsBrut(false);
+    setIsNet(false);
+    setIsHoraireBrut(false);
+    setIsHoraireNet(true);
+    setNetHoraire(event.target.value);
+  };
+
   useEffect(() => {
     if (isNet) {
       calculSalaireNetBrut(net);
@@ -77,6 +99,9 @@ function FormConvert() {
     }
     else if (isHoraireBrut) {
       calculSalaireHoraireBrutNet(brutHoraire);
+    }
+    else if (isHoraireNet) {
+      calculSalaireHoraireNetBrut(netHoraire);
     }
   }, [net, brut, netHoraire, brutHoraire]);
 
@@ -92,6 +117,7 @@ function FormConvert() {
         netHoraire={netHoraire}
         brutHoraire={brutHoraire}
         changeHoraireBrut={handleChangeValueHoraireBrut}
+        changeHoraireNet={handleChangeValueHoraireNet}
       />
     </Form>
   );
