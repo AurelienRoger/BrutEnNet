@@ -3,7 +3,7 @@
 /* eslint-disable import/no-unresolved */
 import React, { useEffect, useState } from 'react';
 import { Form } from 'semantic-ui-react';
-import FormMensuel from '../../FormMensuel/FormMensuel';
+import FormMensuel from '../FormMensuel/FormMensuel';
 import FormHoraire from '../FormHoraire/FormHoraire';
 
 import './FormConvert.scss';
