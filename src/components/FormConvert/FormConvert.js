@@ -3,21 +3,34 @@
 /* eslint-disable import/no-unresolved */
 import React, { useEffect, useState } from 'react';
 import { Form } from 'semantic-ui-react';
+import FormMensuel from '../../FormMensuel/FormMensuel';
+import FormHoraire from '../FormHoraire/FormHoraire';
 
 function FormConvert() {
   const [brut, setBrut] = useState(0);
   const [net, setNet] = useState(0);
+  const [netHoraire, setNetHoraire] = useState(0);
+  const [brutHoraire, setBrutHoraire] = useState(0);
+
   const [isBrut, setIsBrut] = useState(false);
   const [isNet, setIsNet] = useState(false);
 
   const calculSalaireBrutNet = (brutNumber) => {
     const result = Math.round((1 - 0.23) * brutNumber);
+    const resultNetHoraire = (result / ((35 * 52) / 12)).toFixed(2);
+    const resultBrutHoraire = (brutNumber / ((35 * 52) / 12)).toFixed(2);
     setNet(result);
+    setBrutHoraire(resultBrutHoraire);
+    setNetHoraire(resultNetHoraire);
   };
 
   const calculSalaireNetBrut = (netNumber) => {
     const result = Math.round((1 + 0.2989) * netNumber);
+    const resultBrutHoraire = (result / ((35 * 52) / 12)).toFixed(2);
+    const resultNetHoraire = (netNumber / ((35 * 52) / 12)).toFixed(2);
     setBrut(result);
+    setBrutHoraire(resultBrutHoraire);
+    setNetHoraire(resultNetHoraire);
   };
 
   useEffect(() => {
@@ -47,36 +60,13 @@ function FormConvert() {
 
   return (
     <Form>
-      <Form.Group widths="equal">
-        <Form.Field>
-          <label htmlFor="brut">
-            Salaire Mensuel Brut
-            <input type="number" placeholder="Salaire Mensuel Brut" value={brut} name="brut" onChange={handleChangeValueBrut} />
-          </label>
-        </Form.Field>
-        <Form.Field>
-          <label htmlFor="net">
-            Salaire Mensuel Net
-            <input type="number" placeholder="Salaire Mensuel Net" value={net} onChange={handleChangeValueNet} />
-          </label>
-
-        </Form.Field>
-      </Form.Group>
-      <Form.Group widths="equal">
-        <Form.Field>
-          <label htmlFor="horairebrut">
-            Salaire Horaire Brut
-            <input type="number" placeholder="Salaire Horaire Brut" value={brut} name="horairebrut" onChange={handleChangeValueBrut} />
-          </label>
-        </Form.Field>
-        <Form.Field>
-          <label htmlFor="horairenet">
-            Salaire Horaire Net
-            <input type="number" placeholder="Salaire Horaire Net" value={net} name="horairenet" onChange={handleChangeValueNet} />
-          </label>
-
-        </Form.Field>
-      </Form.Group>
+      <FormMensuel
+        brut={brut}
+        net={net}
+        changeBrut={handleChangeValueBrut}
+        changeNet={handleChangeValueNet}
+      />
+      <FormHoraire netHoraire={netHoraire} brutHoraire={brutHoraire} />
     </Form>
   );
 }

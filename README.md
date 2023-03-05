@@ -50,3 +50,16 @@
 ### Ajout d'un composant
 
 - Ajout d'un composant Header
+
+## Etape 6
+
+### Form horaire
+
+- Ajout form pour horaire Brut et Horaire Net
+
+## Etape 7
+
+### Factorisation + modif champs horaire
+
+- Factorisation des form.group 
+- Modification des function pour affichage des taux horaire lors d'une entré
