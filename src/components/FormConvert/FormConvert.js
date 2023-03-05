@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-unresolved */
 import React, { useEffect, useState } from 'react';
@@ -15,7 +16,7 @@ function FormConvert() {
   };
 
   const calculSalaireNetBrut = (netNumber) => {
-    const result = ((1.08 + 0.23) * netNumber).toFixed(2);
+    const result = Math.round((1 + 0.2989) * netNumber);
     setBrut(result);
   };
 

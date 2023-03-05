@@ -32,7 +32,8 @@
 ### Calcul du brut en net et vice versa
 
 - Si Salaire brut rentré, enlever 23%
-- Si salaire net rentré, ajouter 23%
+- Si salaire net rentré, ajouter 29%
+- Arrondissement des valeurs
 
 ## Etape 5
 
