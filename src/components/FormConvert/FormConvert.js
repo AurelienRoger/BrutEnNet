@@ -63,7 +63,6 @@ function FormConvert() {
     setIsHoraireBrut(false);
     setIsHoraireNet(false);
     setBrut(event.target.value);
-    // calculSalaireBrutNet(brut);
   };
 
   const handleChangeValueNet = (event) => {
