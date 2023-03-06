@@ -1,19 +1,44 @@
 import FuncCalcul from './FuncCalcul';
 
-export const calculSalaireAnnuelBrut = (annuelInputBrut, setNet, setBrutHoraire, setNetHoraire) => {
-  const resultMensuelBrut = Math.round(annuelInputBrut / 12);
-  const resultBrutHoraire = (resultMensuelBrut / ((35 * 52) / 12)).toFixed(2);
-  const resultNetHoraire = (result / ((35 * 52) / 12)).toFixed(2);
-  setNet(result);
-  setBrutHoraire(resultBrutHoraire);
-  setNetHoraire(resultNetHoraire);
+export const calculSalaireAnnuelBrutNet = (
+  annuelInputBrut,
+  setBrut,
+  setBrutHoraire,
+  setNetAnnuel,
+  setNet,
+  setNetHoraire,
+) => {
+  const brutMensuel = FuncCalcul.annuelEnMensuel(annuelInputBrut, 12);
+  setBrut(brutMensuel);
+  const brutHoraire = FuncCalcul.mensuelEnJournalier(brutMensuel, 35);
+  setBrutHoraire(brutHoraire);
+
+  const netAnnuel = FuncCalcul.brutEnNet(annuelInputBrut, 0.23);
+  setNetAnnuel(netAnnuel);
+  const netMensuel = FuncCalcul.annuelEnMensuel(netAnnuel, 12);
+  setNet(netMensuel);
+  const netHoraire = FuncCalcul.mensuelEnJournalier(netMensuel, 35);
+  setNetHoraire(netHoraire);
 };
 
-export const calculSalaireAnnuelNet = (netNumber, setBrut, setBrutHoraire, setNetHoraire) => {
-  const result = Math.round((1 + 0.2989) * netNumber);
-  const resultBrutHoraire = (result / ((35 * 52) / 12)).toFixed(2);
-  const resultNetHoraire = (netNumber / ((35 * 52) / 12)).toFixed(2);
-  setBrut(result);
-  setBrutHoraire(resultBrutHoraire);
-  setNetHoraire(resultNetHoraire);
+export const calculSalaireAnnuelNetBrut = (
+  annuelInputNet,
+  setBrut,
+  setBrutHoraire,
+  setBrutAnnuel,
+  setNet,
+  setNetHoraire,
+) => {
+  const netMensuel = FuncCalcul.annuelEnMensuel(annuelInputNet, 12);
+  const brutMensuel = FuncCalcul.netEnBrut(netMensuel, 0.2989);
+  setNet(netMensuel);
+  setBrut(brutMensuel);
+
+  const brutAnnuel = FuncCalcul.mensuelEnAnnuel(brutMensuel, 12);
+  setBrutAnnuel(brutAnnuel);
+
+  const brutHoraire = FuncCalcul.mensuelEnJournalier(brutMensuel, 35);
+  const netHoraire = FuncCalcul.mensuelEnJournalier(netMensuel, 35);
+  setBrutHoraire(brutHoraire);
+  setNetHoraire(netHoraire);
 };

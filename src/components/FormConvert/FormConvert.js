@@ -12,6 +12,9 @@ import { calculSalaireHoraireBrutNet, calculSalaireHoraireNetBrut } from '../../
 import { calculSalaireBrutNet, calculSalaireNetBrut } from '../../Func/FuncMensuel';
 
 import './FormConvert.scss';
+import {
+  calculSalaireAnnuelBrut, calculSalaireAnnuelBrutNet, calculSalaireAnnuelNet, calculSalaireAnnuelNetBrut,
+} from '../../Func/FuncAnnuel';
 
 function FormConvert() {
   const [brut, setBrut] = useState(0);
@@ -42,6 +45,8 @@ function FormConvert() {
     setIsNet(false);
     setIsHoraireBrut(false);
     setIsHoraireNet(false);
+    setIsAnnuelNet(false);
+    setIsAnnuelBrut(false);
     setBrut(event.target.value);
   };
 
@@ -50,6 +55,8 @@ function FormConvert() {
     setIsHoraireNet(false);
     setIsBrut(false);
     setIsNet(true);
+    setIsAnnuelNet(false);
+    setIsAnnuelBrut(false);
     setNet(event.target.value);
   };
 
@@ -58,6 +65,8 @@ function FormConvert() {
     setIsNet(false);
     setIsHoraireBrut(true);
     setIsHoraireNet(false);
+    setIsAnnuelNet(false);
+    setIsAnnuelBrut(false);
     setBrutHoraire(event.target.value);
   };
 
@@ -66,6 +75,8 @@ function FormConvert() {
     setIsNet(false);
     setIsHoraireBrut(false);
     setIsHoraireNet(true);
+    setIsAnnuelNet(false);
+    setIsAnnuelBrut(false);
     setNetHoraire(event.target.value);
   };
 
@@ -102,7 +113,27 @@ function FormConvert() {
     else if (isHoraireNet) {
       calculSalaireHoraireNetBrut(netHoraire, setNet, setBrut, setBrutHoraire, setNetAnnuel, setBrutAnnuel);
     }
-  }, [net, brut, netHoraire, brutHoraire]);
+    else if (isAnnuelBrut) {
+      calculSalaireAnnuelBrutNet(
+        brutAnnuel,
+        setBrut,
+        setBrutHoraire,
+        setNetAnnuel,
+        setNet,
+        setNetHoraire,
+      );
+    }
+    else if (isAnnuelNet) {
+      calculSalaireAnnuelNetBrut(
+        netAnnuel,
+        setBrut,
+        setBrutHoraire,
+        setBrutAnnuel,
+        setNet,
+        setNetHoraire,
+      );
+    }
+  }, [net, brut, netHoraire, brutHoraire, brutAnnuel, netAnnuel]);
 
   return (
     <Form className="formConvert">
