@@ -15,7 +15,7 @@ import { calculSalaireHoraireBrutNet, calculSalaireHoraireNetBrut } from '../../
 import { calculSalaireBrutNet, calculSalaireNetBrut } from '../../Func/FuncMensuel';
 import { calculSalaireAnnuelBrutNet, calculSalaireAnnuelNetBrut } from '../../Func/FuncAnnuel';
 
-function FormConvert() {
+function FormConvert({ percent }) {
   const [brut, setBrut] = useState(0);
   const [net, setNet] = useState(0);
   const [netHoraire, setNetHoraire] = useState(0);
@@ -132,6 +132,7 @@ function FormConvert() {
         net={net}
         changeBrut={handleChangeValueBrut}
         changeNet={handleChangeValueNet}
+        percent={percent}
 
       />
       <FormHoraire
@@ -139,12 +140,14 @@ function FormConvert() {
         brutHoraire={brutHoraire}
         changeHoraireBrut={handleChangeValueHoraireBrut}
         changeHoraireNet={handleChangeValueHoraireNet}
+        percent={percent}
       />
       <FormAnnuel
         brutAnnuel={brutAnnuel}
         netAnnuel={netAnnuel}
         changeAnnuelBrut={handleChangeValueAnnuelleBrut}
         changeAnnuelNet={handleChangeValueAnnuelleNet}
+        percent={percent}
       />
     </Form>
   );

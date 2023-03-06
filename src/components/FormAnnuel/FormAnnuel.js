@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Form, Label } from 'semantic-ui-react';
 
 function FormAnnuel({
-  brutAnnuel, netAnnuel, changeAnnuelBrut, changeAnnuelNet,
+  brutAnnuel, netAnnuel, changeAnnuelBrut, changeAnnuelNet, percent,
 }) {
   return (
     <Form.Group widths="equal">
@@ -17,7 +17,7 @@ function FormAnnuel({
           Salaire Annuel Net
           <span className="labelPercent">
             <Label color="red" size="mini">
-              -23%
+              -{percent}%
             </Label>
           </span>
           <input type="number" placeholder="Salaire Annuel Net" name="annuelnet" value={netAnnuel} onChange={changeAnnuelNet} />

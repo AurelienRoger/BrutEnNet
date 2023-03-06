@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Form, Label, Icon } from 'semantic-ui-react';
 
 function FormMensuel({
-  brut, net, changeBrut, changeNet,
+  brut, net, changeBrut, changeNet, percent,
 }) {
   return (
     <Form.Group widths="equal">
@@ -19,7 +19,7 @@ function FormMensuel({
           Salaire Mensuel Net
           <span className="labelPercent">
             <Label color="red" size="mini">
-              -23%
+              -{percent}%
             </Label>
           </span>
 

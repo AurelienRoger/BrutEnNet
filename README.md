@@ -92,3 +92,8 @@
 
 - Ajout de label -23% aux champs salaire net ..
 
+## Etape 12
+
+### Modification pourcent
+
+- Ajout des valeur dynamique pour les label de pourcentage
