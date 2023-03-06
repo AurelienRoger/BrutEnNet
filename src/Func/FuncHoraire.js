@@ -1,3 +1,5 @@
+import FuncCalcul from './FuncCalcul';
+
 export function calculSalaireHoraireBrutNet(brutHoraireNumber, setNet, setBrut, setNetHoraire) {
   // 15 € * ((35 Heures * 52 Semaines) / 12 Mois)
   const mensuelBrut = Math.round(brutHoraireNumber * ((35 * 52) / 12));

@@ -64,7 +64,7 @@ function FormConvert() {
       calculSalaireNetBrut(net, setBrut, setBrutHoraire, setNetHoraire);
     }
     else if (isBrut) {
-      calculSalaireBrutNet(brut, setNet, setBrutHoraire, setNetHoraire);
+      calculSalaireBrutNet(brut, setNet, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel);
     }
     else if (isHoraireBrut) {
       calculSalaireHoraireBrutNet(brutHoraire, setNet, setBrut, setNetHoraire);
@@ -81,6 +81,7 @@ function FormConvert() {
         net={net}
         changeBrut={handleChangeValueBrut}
         changeNet={handleChangeValueNet}
+
       />
       <FormHoraire
         netHoraire={netHoraire}
@@ -88,7 +89,7 @@ function FormConvert() {
         changeHoraireBrut={handleChangeValueHoraireBrut}
         changeHoraireNet={handleChangeValueHoraireNet}
       />
-      <FormAnnuel />
+      <FormAnnuel brutAnnuel={brutAnnuel} netAnnuel={netAnnuel}/>
     </Form>
   );
 }

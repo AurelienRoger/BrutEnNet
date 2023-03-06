@@ -1,3 +1,5 @@
+import FuncCalcul from './FuncCalcul';
+
 export const calculSalaireAnnuelBrut = (annuelInputBrut, setNet, setBrutHoraire, setNetHoraire) => {
   const resultMensuelBrut = Math.round(annuelInputBrut / 12);
   const resultBrutHoraire = (resultMensuelBrut / ((35 * 52) / 12)).toFixed(2);
