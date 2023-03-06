@@ -7,6 +7,9 @@ import FormMensuel from '../FormMensuel/FormMensuel';
 import FormHoraire from '../FormHoraire/FormHoraire';
 import FormAnnuel from '../FormAnnuel/FormAnnuel';
 
+import { calculSalaireHoraireBrutNet, calculSalaireHoraireNetBrut } from '../../Func/FuncHoraire';
+import { calculSalaireBrutNet, calculSalaireNetBrut } from '../../Func/FuncMensuel';
+
 import './FormConvert.scss';
 
 function FormConvert() {
@@ -23,44 +26,6 @@ function FormConvert() {
   const [isHoraireBrut, setIsHoraireBrut] = useState(false);
   const [isAnnuelBrut, setIsAnnuelBrut] = useState(false);
   const [isAnnuelNet, setIsAnnuelNet] = useState(false);
-
-  const calculSalaireHoraireBrutNet = (brutHoraireNumber) => {
-    // 15 € * ((35 Heures * 52 Semaines) / 12 Mois)
-    const mensuelBrut = Math.round(brutHoraireNumber * ((35 * 52) / 12));
-    const mensuelNet = Math.round((1 - 0.23) * mensuelBrut);
-    const horaireNet = ((1 - 0.23) * brutHoraireNumber).toFixed(2);
-    setNet(mensuelNet);
-    setBrut(mensuelBrut);
-    setNetHoraire(horaireNet);
-  };
-
-  const calculSalaireHoraireNetBrut = (netHoraireNumber) => {
-    // 15 € * ((35 Heures * 52 Semaines) / 12 Mois)
-    const mensuelNet = Math.round(netHoraireNumber * ((35 * 52) / 12));
-    const mensuelBrut = Math.round((1 + 0.2989) * mensuelNet);
-    const horaireBrut = (mensuelBrut / ((35 * 52) / 12)).toFixed(2);
-    setNet(mensuelNet);
-    setBrut(mensuelBrut);
-    setBrutHoraire(horaireBrut);
-  };
-
-  const calculSalaireBrutNet = (brutNumber) => {
-    const result = Math.round((1 - 0.23) * brutNumber);
-    const resultNetHoraire = (result / ((35 * 52) / 12)).toFixed(2);
-    const resultBrutHoraire = (brutNumber / ((35 * 52) / 12)).toFixed(2);
-    setNet(result);
-    setBrutHoraire(resultBrutHoraire);
-    setNetHoraire(resultNetHoraire);
-  };
-
-  const calculSalaireNetBrut = (netNumber) => {
-    const result = Math.round((1 + 0.2989) * netNumber);
-    const resultBrutHoraire = (result / ((35 * 52) / 12)).toFixed(2);
-    const resultNetHoraire = (netNumber / ((35 * 52) / 12)).toFixed(2);
-    setBrut(result);
-    setBrutHoraire(resultBrutHoraire);
-    setNetHoraire(resultNetHoraire);
-  };
 
   const handleChangeValueBrut = (event) => {
     setIsBrut(true);
@@ -96,16 +61,16 @@ function FormConvert() {
 
   useEffect(() => {
     if (isNet) {
-      calculSalaireNetBrut(net);
+      calculSalaireNetBrut(net, setBrut, setBrutHoraire, setNetHoraire);
     }
     else if (isBrut) {
-      calculSalaireBrutNet(brut);
+      calculSalaireBrutNet(brut, setNet, setBrutHoraire, setNetHoraire);
     }
     else if (isHoraireBrut) {
-      calculSalaireHoraireBrutNet(brutHoraire);
+      calculSalaireHoraireBrutNet(brutHoraire, setNet, setBrut, setNetHoraire);
     }
     else if (isHoraireNet) {
-      calculSalaireHoraireNetBrut(netHoraire);
+      calculSalaireHoraireNetBrut(netHoraire, setNet, setBrut, setBrutHoraire);
     }
   }, [net, brut, netHoraire, brutHoraire]);
 

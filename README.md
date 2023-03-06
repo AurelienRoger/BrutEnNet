@@ -71,3 +71,9 @@
 - Ajout de la fonction pour calculer à partir du champs de taux horaire
 - Calcul pour le taux horaire brut
 - Calcul pour le taux horaire net
+
+## Etape 9
+
+### Intégration input
+
+- Intégration des inputs Annuel brut et annuel net
