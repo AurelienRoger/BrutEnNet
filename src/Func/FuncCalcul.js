@@ -1,29 +1,3 @@
-// export const mensuelEnJournalier = (mensuel, nombreHeure) => {
-//   const result = (mensuel / ((nombreHeure * 52) / 12)).toFixed(2);
-//   return result;
-// };
-
-// export const journalierEnMensuel = (horaire, nombreHeure) => {
-//   const result = Math.round(horaire * ((nombreHeure * 52) / 12));
-//   return result;
-// };
-
-// export const mensuelEnAnnuel = (mensuel, mois) => {
-//   const result = Math.round(mensuel * mois);
-//   return result;
-// };
-
-// export const brutEnNet = (brut, pourcentage) => {
-//   const result = Math.round((1 - pourcentage) * brut);
-//   return result;
-// };
-
-// export const netEnBrut = (net, pourcentage) => {
-//   // Si 23% brut-> net alors 29,89% en net -> brut
-//   const result = Math.round((1 + pourcentage) * net);
-//   return result;
-// };
-
 export default class FuncCalcul {
   static annuelEnMensuel(annuel, mois) {
     const result = Math.round(annuel / mois);

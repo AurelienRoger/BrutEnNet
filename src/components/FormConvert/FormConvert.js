@@ -92,16 +92,16 @@ function FormConvert({ percent }) {
 
   useEffect(() => {
     if (isNet) {
-      calculSalaireNetBrut(net, setBrut, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel);
+      calculSalaireNetBrut(net, setBrut, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel, percent);
     }
     else if (isBrut) {
-      calculSalaireBrutNet(brut, setNet, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel);
+      calculSalaireBrutNet(brut, setNet, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel, percent);
     }
     else if (isHoraireBrut) {
-      calculSalaireHoraireBrutNet(brutHoraire, setNet, setBrut, setNetHoraire, setNetAnnuel, setBrutAnnuel);
+      calculSalaireHoraireBrutNet(brutHoraire, setNet, setBrut, setNetHoraire, setNetAnnuel, setBrutAnnuel, percent);
     }
     else if (isHoraireNet) {
-      calculSalaireHoraireNetBrut(netHoraire, setNet, setBrut, setBrutHoraire, setNetAnnuel, setBrutAnnuel);
+      calculSalaireHoraireNetBrut(netHoraire, setNet, setBrut, setBrutHoraire, setNetAnnuel, setBrutAnnuel, percent);
     }
     else if (isAnnuelBrut) {
       calculSalaireAnnuelBrutNet(
@@ -111,6 +111,7 @@ function FormConvert({ percent }) {
         setNetAnnuel,
         setNet,
         setNetHoraire,
+        percent,
       );
     }
     else if (isAnnuelNet) {
@@ -121,9 +122,10 @@ function FormConvert({ percent }) {
         setBrutAnnuel,
         setNet,
         setNetHoraire,
+        percent,
       );
     }
-  }, [net, brut, netHoraire, brutHoraire, brutAnnuel, netAnnuel]);
+  }, [net, brut, netHoraire, brutHoraire, brutAnnuel, netAnnuel, percent]);
 
   return (
     <Form className="formConvert">

@@ -97,3 +97,4 @@
 ### Modification pourcent
 
 - Ajout des valeur dynamique pour les label de pourcentage
+- Mise des valeurs dynamique dans les fonctions

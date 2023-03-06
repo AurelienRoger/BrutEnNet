@@ -7,13 +7,15 @@ export const calculSalaireAnnuelBrutNet = (
   setNetAnnuel,
   setNet,
   setNetHoraire,
+  percent,
 ) => {
+  const percentCalc = percent / 100;
   const brutMensuel = FuncCalcul.annuelEnMensuel(annuelInputBrut, 12);
   setBrut(brutMensuel);
   const brutHoraire = FuncCalcul.mensuelEnJournalier(brutMensuel, 35);
   setBrutHoraire(brutHoraire);
 
-  const netAnnuel = FuncCalcul.brutEnNet(annuelInputBrut, 0.23);
+  const netAnnuel = FuncCalcul.brutEnNet(annuelInputBrut, percentCalc);
   setNetAnnuel(netAnnuel);
   const netMensuel = FuncCalcul.annuelEnMensuel(netAnnuel, 12);
   setNet(netMensuel);
@@ -28,9 +30,13 @@ export const calculSalaireAnnuelNetBrut = (
   setBrutAnnuel,
   setNet,
   setNetHoraire,
+  percent,
 ) => {
+  const percentCalc = percent / 100;
+  const percentNet = percentCalc + 0.0689;
+
   const netMensuel = FuncCalcul.annuelEnMensuel(annuelInputNet, 12);
-  const brutMensuel = FuncCalcul.netEnBrut(netMensuel, 0.2989);
+  const brutMensuel = FuncCalcul.netEnBrut(netMensuel, percentNet);
   setNet(netMensuel);
   setBrut(brutMensuel);
 
