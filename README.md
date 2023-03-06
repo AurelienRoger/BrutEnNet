@@ -77,3 +77,11 @@
 ### Intégration input
 
 - Intégration des inputs Annuel brut et annuel net
+
+
+## Etape 10
+
+### input annuel & découpage fonctions
+
+- Assuré le fonctionnement des inputs annuel
+- Découpage des fonctions de calculs en plusieurs fichiers
