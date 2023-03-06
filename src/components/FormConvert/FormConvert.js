@@ -76,10 +76,10 @@ function FormConvert() {
       calculSalaireBrutNet(brut, setNet, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel);
     }
     else if (isHoraireBrut) {
-      calculSalaireHoraireBrutNet(brutHoraire, setNet, setBrut, setNetHoraire);
+      calculSalaireHoraireBrutNet(brutHoraire, setNet, setBrut, setNetHoraire, setNetAnnuel, setBrutAnnuel);
     }
     else if (isHoraireNet) {
-      calculSalaireHoraireNetBrut(netHoraire, setNet, setBrut, setBrutHoraire);
+      calculSalaireHoraireNetBrut(netHoraire, setNet, setBrut, setBrutHoraire, setNetAnnuel, setBrutAnnuel);
     }
   }, [net, brut, netHoraire, brutHoraire]);
 
