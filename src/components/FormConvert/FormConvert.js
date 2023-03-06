@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { Form } from 'semantic-ui-react';
 import FormMensuel from '../FormMensuel/FormMensuel';
 import FormHoraire from '../FormHoraire/FormHoraire';
+import FormAnnuel from '../FormAnnuel/FormAnnuel';
 
 import './FormConvert.scss';
 
@@ -13,11 +14,15 @@ function FormConvert() {
   const [net, setNet] = useState(0);
   const [netHoraire, setNetHoraire] = useState(0);
   const [brutHoraire, setBrutHoraire] = useState(0);
+  const [netAnnuel, setNetAnnuel] = useState(0);
+  const [brutAnnuel, setBrutAnnuel] = useState(0);
 
   const [isBrut, setIsBrut] = useState(false);
   const [isNet, setIsNet] = useState(false);
   const [isHoraireNet, setIsHoraireNet] = useState(false);
   const [isHoraireBrut, setIsHoraireBrut] = useState(false);
+  const [isAnnuelBrut, setIsAnnuelBrut] = useState(false);
+  const [isAnnuelNet, setIsAnnuelNet] = useState(false);
 
   const calculSalaireHoraireBrutNet = (brutHoraireNumber) => {
     // 15 € * ((35 Heures * 52 Semaines) / 12 Mois)
@@ -118,6 +123,7 @@ function FormConvert() {
         changeHoraireBrut={handleChangeValueHoraireBrut}
         changeHoraireNet={handleChangeValueHoraireNet}
       />
+      <FormAnnuel />
     </Form>
   );
 }
