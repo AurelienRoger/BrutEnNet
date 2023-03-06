@@ -4,17 +4,16 @@
 /* eslint-disable import/no-unresolved */
 import React, { useEffect, useState } from 'react';
 import { Form } from 'semantic-ui-react';
+
+import './FormConvert.scss';
+
 import FormMensuel from '../FormMensuel/FormMensuel';
 import FormHoraire from '../FormHoraire/FormHoraire';
 import FormAnnuel from '../FormAnnuel/FormAnnuel';
 
 import { calculSalaireHoraireBrutNet, calculSalaireHoraireNetBrut } from '../../Func/FuncHoraire';
 import { calculSalaireBrutNet, calculSalaireNetBrut } from '../../Func/FuncMensuel';
-
-import './FormConvert.scss';
-import {
-  calculSalaireAnnuelBrut, calculSalaireAnnuelBrutNet, calculSalaireAnnuelNet, calculSalaireAnnuelNetBrut,
-} from '../../Func/FuncAnnuel';
+import { calculSalaireAnnuelBrutNet, calculSalaireAnnuelNetBrut } from '../../Func/FuncAnnuel';
 
 function FormConvert() {
   const [brut, setBrut] = useState(0);
@@ -30,15 +29,6 @@ function FormConvert() {
   const [isHoraireBrut, setIsHoraireBrut] = useState(false);
   const [isAnnuelBrut, setIsAnnuelBrut] = useState(false);
   const [isAnnuelNet, setIsAnnuelNet] = useState(false);
-
-  const tabHook = [
-    brut, setBrut,
-    net, setNet,
-    netHoraire, setNetHoraire,
-    brutHoraire, setBrutHoraire,
-    netAnnuel, setNetAnnuel,
-    brutAnnuel, setBrutAnnuel,
-  ];
 
   const handleChangeValueBrut = (event) => {
     setIsBrut(true);

@@ -85,3 +85,10 @@
 
 - Assuré le fonctionnement des inputs annuel
 - Découpage des fonctions de calculs en plusieurs fichiers
+
+## Etape 11
+
+### Ajout labels
+
+- Ajout de label -23% aux champs salaire net ..
+

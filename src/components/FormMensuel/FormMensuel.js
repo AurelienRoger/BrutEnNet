@@ -1,5 +1,7 @@
+import '../App/styles.css';
+
 import React, { useEffect, useState } from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, Label, Icon } from 'semantic-ui-react';
 
 function FormMensuel({
   brut, net, changeBrut, changeNet,
@@ -15,9 +17,14 @@ function FormMensuel({
       <Form.Field>
         <label htmlFor="net">
           Salaire Mensuel Net
+          <span className="labelPercent">
+            <Label color="red" size="mini">
+              -23%
+            </Label>
+          </span>
+
           <input type="number" placeholder="Salaire Mensuel Net" value={net} onChange={changeNet} />
         </label>
-
       </Form.Field>
     </Form.Group>
   );

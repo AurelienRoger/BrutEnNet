@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, Label } from 'semantic-ui-react';
 
 function FormHoraire({
   brutHoraire, netHoraire,
@@ -16,6 +16,11 @@ function FormHoraire({
       <Form.Field>
         <label htmlFor="horairenet">
           Salaire Horaire Net
+          <span className="labelPercent">
+            <Label color="red" size="mini">
+              -23%
+            </Label>
+          </span>
           <input type="number" placeholder="Salaire Horaire Net" value={netHoraire} name="horairenet" onChange={changeHoraireNet} />
         </label>
 
