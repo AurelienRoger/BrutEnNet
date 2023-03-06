@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-unresolved */
@@ -68,6 +69,26 @@ function FormConvert() {
     setNetHoraire(event.target.value);
   };
 
+  const handleChangeValueAnnuelleBrut = (event) => {
+    setIsBrut(false);
+    setIsNet(false);
+    setIsHoraireBrut(false);
+    setIsHoraireNet(false);
+    setIsAnnuelNet(false);
+    setIsAnnuelBrut(true);
+    setBrutAnnuel(event.target.value);
+  };
+
+  const handleChangeValueAnnuelleNet = (event) => {
+    setIsBrut(false);
+    setIsNet(false);
+    setIsHoraireBrut(false);
+    setIsHoraireNet(false);
+    setIsAnnuelNet(true);
+    setIsAnnuelBrut(false);
+    setNetAnnuel(event.target.value);
+  };
+
   useEffect(() => {
     if (isNet) {
       calculSalaireNetBrut(net, setBrut, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel);
@@ -98,7 +119,12 @@ function FormConvert() {
         changeHoraireBrut={handleChangeValueHoraireBrut}
         changeHoraireNet={handleChangeValueHoraireNet}
       />
-      <FormAnnuel brutAnnuel={brutAnnuel} netAnnuel={netAnnuel} />
+      <FormAnnuel
+        brutAnnuel={brutAnnuel}
+        netAnnuel={netAnnuel}
+        changeAnnuelBrut={handleChangeValueAnnuelleBrut}
+        changeAnnuelNet={handleChangeValueAnnuelleNet}
+      />
     </Form>
   );
 }
