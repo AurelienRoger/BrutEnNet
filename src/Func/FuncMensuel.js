@@ -1,6 +1,13 @@
 import FuncCalcul from './FuncCalcul';
 
-export const calculSalaireBrutNet = (brutNumber, setNet, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel) => {
+export const calculSalaireBrutNet = (
+  brutNumber,
+  setNet,
+  setBrutHoraire,
+  setNetHoraire,
+  setNetAnnuel,
+  setBrutAnnuel,
+) => {
   // mensuel
   const netMensuel = FuncCalcul.brutEnNet(brutNumber, 0.23);
   setNet(netMensuel);
@@ -18,11 +25,27 @@ export const calculSalaireBrutNet = (brutNumber, setNet, setBrutHoraire, setNetH
   setNetHoraire(netHoraire);
 };
 
-export const calculSalaireNetBrut = (netNumber, setBrut, setBrutHoraire, setNetHoraire) => {
-  const result = Math.round((1 + 0.2989) * netNumber);
-  const resultBrutHoraire = (result / ((35 * 52) / 12)).toFixed(2);
-  const resultNetHoraire = (netNumber / ((35 * 52) / 12)).toFixed(2);
-  setBrut(result);
-  setBrutHoraire(resultBrutHoraire);
-  setNetHoraire(resultNetHoraire);
+export const calculSalaireNetBrut = (
+  netNumber,
+  setBrut,
+  setBrutHoraire,
+  setNetHoraire,
+  setNetAnnuel,
+  setBrutAnnuel,
+) => {
+  // mensuel
+  const brutMensuel = FuncCalcul.netEnBrut(netNumber, 0.2989);
+  setBrut(brutMensuel);
+
+  // annuel
+  const netAnnuel = FuncCalcul.mensuelEnAnnuel(netNumber, 12);
+  const brutAnnuel = FuncCalcul.mensuelEnAnnuel(brutMensuel, 12);
+  setBrutAnnuel(brutAnnuel);
+  setNetAnnuel(netAnnuel);
+
+  // journalier
+  const netHoraire = FuncCalcul.mensuelEnJournalier(netNumber, 35);
+  const brutHoraire = FuncCalcul.mensuelEnJournalier(brutMensuel, 35);
+  setBrutHoraire(brutHoraire);
+  setNetHoraire(netHoraire);
 };

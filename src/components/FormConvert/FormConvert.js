@@ -27,6 +27,15 @@ function FormConvert() {
   const [isAnnuelBrut, setIsAnnuelBrut] = useState(false);
   const [isAnnuelNet, setIsAnnuelNet] = useState(false);
 
+  const tabHook = [
+    brut, setBrut,
+    net, setNet,
+    netHoraire, setNetHoraire,
+    brutHoraire, setBrutHoraire,
+    netAnnuel, setNetAnnuel,
+    brutAnnuel, setBrutAnnuel,
+  ];
+
   const handleChangeValueBrut = (event) => {
     setIsBrut(true);
     setIsNet(false);
@@ -61,7 +70,7 @@ function FormConvert() {
 
   useEffect(() => {
     if (isNet) {
-      calculSalaireNetBrut(net, setBrut, setBrutHoraire, setNetHoraire);
+      calculSalaireNetBrut(net, setBrut, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel);
     }
     else if (isBrut) {
       calculSalaireBrutNet(brut, setNet, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel);
@@ -89,7 +98,7 @@ function FormConvert() {
         changeHoraireBrut={handleChangeValueHoraireBrut}
         changeHoraireNet={handleChangeValueHoraireNet}
       />
-      <FormAnnuel brutAnnuel={brutAnnuel} netAnnuel={netAnnuel}/>
+      <FormAnnuel brutAnnuel={brutAnnuel} netAnnuel={netAnnuel} />
     </Form>
   );
 }
