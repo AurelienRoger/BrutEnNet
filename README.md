@@ -105,6 +105,14 @@
 
 - Ajout des boutons de réglages pourcentage en fonction du statut.
 
+## Etape 14
+
+### Slider et Grid
+
+- Réglage du slider en dynamique avec les props
+- Mise en place de grid et responsive
+
+
 ## TODO 
 
 - Créer un pré-réglage de salaire
