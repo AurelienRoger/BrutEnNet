@@ -112,6 +112,13 @@
 - Réglage du slider en dynamique avec les props
 - Mise en place de grid et responsive
 
+## Etape 15
+
+### Input après impots
+
+- Mise en place des Input après impots
+- Passage de props
+
 
 ## TODO 
 

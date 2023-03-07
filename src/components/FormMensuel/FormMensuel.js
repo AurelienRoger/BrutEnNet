@@ -1,7 +1,7 @@
 import '../App/styles.css';
 
 import React, { useEffect, useState } from 'react';
-import { Form, Label, Icon } from 'semantic-ui-react';
+import { Form, Label } from 'semantic-ui-react';
 
 function FormMensuel({
   brut, net, changeBrut, changeNet, percent,

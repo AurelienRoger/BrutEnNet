@@ -6,6 +6,7 @@ import HeaderComp from '../HeaderComp/HeaderComp';
 import Buttons from '../Buttons/Buttons';
 import Slider from '../Slider/Slider';
 import './styles.css';
+import FormImpot from '../FormImpot/FormImpot';
 
 // == Composant
 function App() {
@@ -22,6 +23,7 @@ function App() {
           </Grid.Column>
           <Grid.Column>
             <Slider slider={slider} setSlider={setSlider} />
+            <FormImpot />
           </Grid.Column>
         </Grid.Row>
       </Grid>
