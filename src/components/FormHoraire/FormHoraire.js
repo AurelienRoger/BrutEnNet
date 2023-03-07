@@ -9,7 +9,7 @@ function FormHoraire({
   return (
     <Form.Group widths="equal">
       <Form.Field>
-        <label htmlFor="horairebrut">
+        <label htmlFor="horairebrut" >
           Salaire Horaire Brut
           <input type="number" placeholder="Salaire Horaire Brut" value={brutHoraire} name="horairebrut" onChange={changeHoraireBrut} />
         </label>

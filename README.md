@@ -98,3 +98,18 @@
 
 - Ajout des valeur dynamique pour les label de pourcentage
 - Mise des valeurs dynamique dans les fonctions
+
+## Etape 13
+
+### Ajouts boutons réglages
+
+- Ajout des boutons de réglages pourcentage en fonction du statut.
+
+## TODO 
+
+- Créer un pré-réglage de salaire
+- Pouvoir modifier le taux d'imposition
+- Pouvoir modifier le nombre d'heure car pour le moment en dur à 35h
+- Pouvoir modifier le nombre de mois car pour le moment en dur à 12 mois
+
+
