@@ -118,6 +118,7 @@
 
 - Mise en place des Input après impots
 - Passage de props
+- Affichage des valeurs après impots
 
 
 ## TODO 
