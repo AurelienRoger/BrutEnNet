@@ -3,6 +3,7 @@ import { useState } from 'react';
 import FormConvert from '../FormConvert/FormConvert';
 import HeaderComp from '../HeaderComp/HeaderComp';
 import Buttons from '../Buttons/Buttons';
+import Slider from '../Slider/Slider';
 import './styles.css';
 
 // == Composant
@@ -13,6 +14,7 @@ function App() {
       <HeaderComp />
       <FormConvert percent={percent} />
       <Buttons setPercent={setPercent} />
+      <Slider />
     </div>
   );
 }
