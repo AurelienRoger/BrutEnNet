@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Popup } from 'semantic-ui-react';
 
 function Buttons({ setPercent }) {
   const [isActiveUn, setIsActiveUn] = useState(true);
@@ -27,10 +27,28 @@ function Buttons({ setPercent }) {
     setIsActiveTrois(true);
   };
   return (
-    <Button.Group color="olive">
-      <Button onClick={handleClickbuttonUn} active={isActiveUn}>Non-Cadre</Button>
-      <Button onClick={handleClickbuttonDeux} active={isActiveDeux}>Cadre</Button>
-      <Button onClick={handleClickbuttonTrois} active={isActiveTrois}>Fonctionnaire</Button>
+    <Button.Group compact>
+      <Popup
+        size="mini"
+        content="-23%"
+        trigger={
+          <Button color="olive" inverted onClick={handleClickbuttonUn} active={isActiveUn}>Non-Cadre</Button>
+    }
+      />
+      <Popup
+        size="mini"
+        content="-20%"
+        trigger={
+          <Button color="olive" inverted onClick={handleClickbuttonDeux} active={isActiveDeux}>Cadre</Button>
+    }
+      />
+      <Popup
+        size="mini"
+        content="-15%"
+        trigger={
+          <Button color="olive" inverted onClick={handleClickbuttonTrois} active={isActiveTrois}>Fonctionnaire</Button>
+    }
+      />
     </Button.Group>
   );
 }
