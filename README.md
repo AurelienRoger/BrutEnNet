@@ -120,6 +120,14 @@
 - Passage de props
 - Affichage des valeurs après impots
 
+## Etape 16
+
+### boutons nombre d'heure
+
+- Ajout des boutons de selection nombre d'heure
+- Modification des couleurs du style
+- Découpage composants boutons
+
 
 ## TODO 
 

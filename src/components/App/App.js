@@ -11,6 +11,7 @@ import FormImpot from '../FormImpot/FormImpot';
 // == Composant
 function App() {
   const [percent, setPercent] = useState(23);
+  const [hour, setHour] = useState(35);
   const [slider, setSlider] = useState(0);
   const [net, setNet] = useState(0);
   return (
@@ -19,8 +20,8 @@ function App() {
       <Grid stackable columns={2}>
         <Grid.Row>
           <Grid.Column>
-            <FormConvert percent={percent} net={net} setNet={setNet}/>
-            <Buttons setPercent={setPercent} />
+            <FormConvert percent={percent} net={net} setNet={setNet} hour={hour}/>
+            <Buttons setPercent={setPercent} setHour={setHour} />
           </Grid.Column>
           <Grid.Column>
             <Slider slider={slider} setSlider={setSlider} />
