@@ -42,12 +42,12 @@ function ButtonsHour({ setHour }) {
   };
   return (
     <Button.Group compact fluid>
-      <Button className="colorButton buttonHour" inverted onClick={handleClickbuttonUn} active={isActiveUn}>35h</Button>
+      <Button className="colorButton buttonStyle" inverted onClick={handleClickbuttonUn} active={isActiveUn}>35h</Button>
 
-      <Button className="colorButton buttonHour" inverted onClick={handleClickbuttonDeux} active={isActiveDeux}>37h</Button>
+      <Button className="colorButton buttonStyle" inverted onClick={handleClickbuttonDeux} active={isActiveDeux}>37h</Button>
 
-      <Button className="colorButton buttonHour" inverted onClick={handleClickbuttonTrois} active={isActiveTrois}>38h</Button>
-      <Button className="colorButton buttonHour" inverted onClick={handleClickbuttonQuatre} active={isActiveQuatre}>39h</Button>
+      <Button className="colorButton buttonStyle" inverted onClick={handleClickbuttonTrois} active={isActiveTrois}>38h</Button>
+      <Button className="colorButton buttonStyle" inverted onClick={handleClickbuttonQuatre} active={isActiveQuatre}>39h</Button>
 
     </Button.Group>
   );

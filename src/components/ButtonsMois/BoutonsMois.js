@@ -42,12 +42,12 @@ function ButtonsMois({ setMonth }) {
   };
   return (
     <Button.Group compact fluid>
-      <Button className="colorButton buttonHour" inverted onClick={handleClickbuttonUn} active={isActiveUn}>12 mois</Button>
+      <Button className="colorButton buttonStyle" inverted onClick={handleClickbuttonUn} active={isActiveUn}>12 mois</Button>
 
-      <Button className="colorButton buttonHour" inverted onClick={handleClickbuttonDeux} active={isActiveDeux}>13 mois</Button>
+      <Button className="colorButton buttonStyle" inverted onClick={handleClickbuttonDeux} active={isActiveDeux}>13 mois</Button>
 
-      <Button className="colorButton buttonHour" inverted onClick={handleClickbuttonTrois} active={isActiveTrois}>14 mois</Button>
-      <Button className="colorButton buttonHour" inverted onClick={handleClickbuttonQuatre} active={isActiveQuatre}>15 mois</Button>
+      <Button className="colorButton buttonStyle" inverted onClick={handleClickbuttonTrois} active={isActiveTrois}>14 mois</Button>
+      <Button className="colorButton buttonStyle" inverted onClick={handleClickbuttonQuatre} active={isActiveQuatre}>15 mois</Button>
 
     </Button.Group>
   );
