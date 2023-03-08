@@ -1,4 +1,4 @@
-import '../App/styles.css';
+import '../App/styles.scss';
 
 import React, { useEffect, useState } from 'react';
 import { Form, Label } from 'semantic-ui-react';

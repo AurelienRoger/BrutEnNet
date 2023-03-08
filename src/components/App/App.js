@@ -5,7 +5,7 @@ import FormConvert from '../FormConvert/FormConvert';
 import HeaderComp from '../HeaderComp/HeaderComp';
 import Buttons from '../Buttons/Buttons';
 import Slider from '../Slider/Slider';
-import './styles.css';
+import './styles.scss';
 import FormImpot from '../FormImpot/FormImpot';
 
 // == Composant

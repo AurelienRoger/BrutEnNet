@@ -1,0 +1,5 @@
+@use '../../styles/vars' as v;
+
+.colortitle{
+    color: v.$color!important;
+}

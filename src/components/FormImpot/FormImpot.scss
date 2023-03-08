@@ -1,3 +1,10 @@
+@use '../../styles/vars' as v;
+
 .formConvert{
     margin: 0 2rem;
+}
+
+.colorBase{
+    background-color: v.$color !important; 
+    color: v.$color-back!important;
 }

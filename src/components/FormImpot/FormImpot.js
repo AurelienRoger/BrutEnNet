@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import '../App/styles.css';
+import '../App/styles.scss';
+import './FormImpot.scss';
 import { List, Label } from 'semantic-ui-react';
 
 function FormImpot({ net, slider, setNet }) {
@@ -19,13 +20,13 @@ function FormImpot({ net, slider, setNet }) {
   return (
     <List divided selection>
       <List.Item>
-        <Label color="olive" horizontal>
+        <Label className="colorBase" horizontal>
           {netImpot}
         </Label>
         Mensuel Net après impots
       </List.Item>
       <List.Item>
-        <Label color="olive" horizontal>
+        <Label className="colorBase" horizontal>
           {annuelNetImpot}
         </Label>
         Annuel Net après impots

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Popup } from 'semantic-ui-react';
+import './Buttons.scss';
 
 function Buttons({ setPercent }) {
   const [isActiveUn, setIsActiveUn] = useState(true);
@@ -32,21 +33,21 @@ function Buttons({ setPercent }) {
         size="mini"
         content="-23%"
         trigger={
-          <Button color="olive" inverted onClick={handleClickbuttonUn} active={isActiveUn}>Non-Cadre</Button>
+          <Button className="colorButton" inverted onClick={handleClickbuttonUn} active={isActiveUn}>Non-Cadre</Button>
     }
       />
       <Popup
         size="mini"
         content="-20%"
         trigger={
-          <Button color="olive" inverted onClick={handleClickbuttonDeux} active={isActiveDeux}>Cadre</Button>
+          <Button className="colorButton" inverted onClick={handleClickbuttonDeux} active={isActiveDeux}>Cadre</Button>
     }
       />
       <Popup
         size="mini"
         content="-15%"
         trigger={
-          <Button color="olive" inverted onClick={handleClickbuttonTrois} active={isActiveTrois}>Fonctionnaire</Button>
+          <Button className="colorButton" inverted onClick={handleClickbuttonTrois} active={isActiveTrois}>Fonctionnaire</Button>
     }
       />
     </Button.Group>
