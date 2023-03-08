@@ -15,7 +15,9 @@ import { calculSalaireHoraireBrutNet, calculSalaireHoraireNetBrut } from '../../
 import { calculSalaireBrutNet, calculSalaireNetBrut } from '../../Func/FuncMensuel';
 import { calculSalaireAnnuelBrutNet, calculSalaireAnnuelNetBrut } from '../../Func/FuncAnnuel';
 
-function FormConvert({ percent, net, setNet }) {
+function FormConvert({
+  percent, net, setNet, hour, month,
+}) {
   const [brut, setBrut] = useState(0);
   const [netHoraire, setNetHoraire] = useState(0);
   const [brutHoraire, setBrutHoraire] = useState(0);
@@ -91,16 +93,16 @@ function FormConvert({ percent, net, setNet }) {
 
   useEffect(() => {
     if (isNet) {
-      calculSalaireNetBrut(net, setBrut, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel, percent);
+      calculSalaireNetBrut(net, setBrut, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel, percent, hour, month);
     }
     else if (isBrut) {
-      calculSalaireBrutNet(brut, setNet, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel, percent);
+      calculSalaireBrutNet(brut, setNet, setBrutHoraire, setNetHoraire, setNetAnnuel, setBrutAnnuel, percent, hour, month);
     }
     else if (isHoraireBrut) {
-      calculSalaireHoraireBrutNet(brutHoraire, setNet, setBrut, setNetHoraire, setNetAnnuel, setBrutAnnuel, percent);
+      calculSalaireHoraireBrutNet(brutHoraire, setNet, setBrut, setNetHoraire, setNetAnnuel, setBrutAnnuel, percent, hour, month);
     }
     else if (isHoraireNet) {
-      calculSalaireHoraireNetBrut(netHoraire, setNet, setBrut, setBrutHoraire, setNetAnnuel, setBrutAnnuel, percent);
+      calculSalaireHoraireNetBrut(netHoraire, setNet, setBrut, setBrutHoraire, setNetAnnuel, setBrutAnnuel, percent, hour, month);
     }
     else if (isAnnuelBrut) {
       calculSalaireAnnuelBrutNet(
@@ -111,6 +113,8 @@ function FormConvert({ percent, net, setNet }) {
         setNet,
         setNetHoraire,
         percent,
+        hour,
+        month,
       );
     }
     else if (isAnnuelNet) {
@@ -122,9 +126,11 @@ function FormConvert({ percent, net, setNet }) {
         setNet,
         setNetHoraire,
         percent,
+        hour,
+        month,
       );
     }
-  }, [net, brut, netHoraire, brutHoraire, brutAnnuel, netAnnuel, percent]);
+  }, [net, brut, netHoraire, brutHoraire, brutAnnuel, netAnnuel, percent, hour, month]);
 
   return (
     <Form className="formConvert">

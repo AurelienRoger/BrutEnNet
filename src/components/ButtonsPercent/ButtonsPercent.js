@@ -28,7 +28,7 @@ function ButtonsPercent({ setPercent }) {
     setIsActiveTrois(true);
   };
   return (
-    <Button.Group compact>
+    <Button.Group compact fluid>
       <Popup
         size="mini"
         content="-23%"

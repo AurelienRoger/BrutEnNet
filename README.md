@@ -127,13 +127,18 @@
 - Ajout des boutons de selection nombre d'heure
 - Modification des couleurs du style
 - Découpage composants boutons
+- Passage des props et maj du salaire lors du nombre d'heure
+
+## Etape 17
+
+### Boutons nombre de mois
+
+- Intégration boutons nombre de mois de salaire
+- Css sur tous les boutons pour avoir la meme taille de container
 
 
 ## TODO 
 
 - Créer un pré-réglage de salaire
-- Pouvoir modifier le taux d'imposition
-- Pouvoir modifier le nombre d'heure car pour le moment en dur à 35h
-- Pouvoir modifier le nombre de mois car pour le moment en dur à 12 mois
 
 
