@@ -1,0 +1,13 @@
+@use '../../styles/vars' as v;
+
+.footer{
+    margin-top: 20px;
+    a{
+        color: v.$color;
+        text-decoration: none;
+    }
+    a:hover{
+        color: v.$color;
+        background-color: white;
+    }
+}

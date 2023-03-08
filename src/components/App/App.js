@@ -1,12 +1,14 @@
 // == Import
 import { useState } from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Divider, Grid } from 'semantic-ui-react';
 import FormConvert from '../FormConvert/FormConvert';
 import HeaderComp from '../HeaderComp/HeaderComp';
 import Buttons from '../Buttons/Buttons';
 import Slider from '../Slider/Slider';
 import './styles.scss';
 import FormImpot from '../FormImpot/FormImpot';
+import Footer from '../Footer/Footer';
+import Paragraphe from '../Paragraphe/Paragraphe';
 
 // == Composant
 function App() {
@@ -30,6 +32,9 @@ function App() {
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      <Divider />
+      <Paragraphe />
+      <Footer />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import './HeaderComp.scss';
 
 function HeaderComp() {
   return (
-    <Header as="h3" dividing className="colortitle">
+    <Header as="h1" dividing className="colortitle">
       Calcul Salaire Brut en Net ou inversement
     </Header>
   );

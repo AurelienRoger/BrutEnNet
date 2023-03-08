@@ -136,6 +136,13 @@
 - Intégration boutons nombre de mois de salaire
 - Css sur tous les boutons pour avoir la meme taille de container
 
+## Etape 18
+
+### Footer & paragraphe
+
+- Mise en place du footer
+- Mise en place d'un paragraphe explicatif
+
 
 ## TODO 
 
