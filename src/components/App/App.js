@@ -34,6 +34,7 @@ function App() {
       </Grid>
       <Divider />
       <Paragraphe />
+      <Divider />
       <Footer />
     </div>
   );
