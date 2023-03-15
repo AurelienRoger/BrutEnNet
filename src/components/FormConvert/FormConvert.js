@@ -134,6 +134,13 @@ function FormConvert({
 
   return (
     <Form className="formConvert">
+      <FormAnnuel
+        brutAnnuel={brutAnnuel}
+        netAnnuel={netAnnuel}
+        changeAnnuelBrut={handleChangeValueAnnuelleBrut}
+        changeAnnuelNet={handleChangeValueAnnuelleNet}
+        percent={percent}
+      />
       <FormMensuel
         brut={brut}
         net={net}
@@ -147,13 +154,6 @@ function FormConvert({
         brutHoraire={brutHoraire}
         changeHoraireBrut={handleChangeValueHoraireBrut}
         changeHoraireNet={handleChangeValueHoraireNet}
-        percent={percent}
-      />
-      <FormAnnuel
-        brutAnnuel={brutAnnuel}
-        netAnnuel={netAnnuel}
-        changeAnnuelBrut={handleChangeValueAnnuelleBrut}
-        changeAnnuelNet={handleChangeValueAnnuelleNet}
         percent={percent}
       />
     </Form>
