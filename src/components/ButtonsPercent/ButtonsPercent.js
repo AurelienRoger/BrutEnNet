@@ -17,7 +17,7 @@ function ButtonsPercent({ setPercent }) {
   };
 
   const handleClickbuttonDeux = () => {
-    setPercent(20);
+    setPercent(25);
     setIsActiveUn(false);
     setIsActiveDeux(true);
     setIsActiveTrois(false);
@@ -50,7 +50,7 @@ function ButtonsPercent({ setPercent }) {
       />
       <Popup
         size="mini"
-        content="-20%"
+        content="-25%"
         trigger={
           <Button className="colorButton buttonStyle" inverted onClick={handleClickbuttonDeux} active={isActiveDeux}>Cadre</Button>
     }
