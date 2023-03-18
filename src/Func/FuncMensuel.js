@@ -9,7 +9,7 @@ export const calculSalaireBrutNet = (
   setBrutAnnuel,
   percent,
   hour,
-  month
+  month,
 ) => {
   const percentReel = percent / 100;
   // mensuel
@@ -40,8 +40,21 @@ export const calculSalaireNetBrut = (
   hour,
   month,
 ) => {
-  const percentReel = percent / 100;
-  const percentNet = percentReel + 0.0689;
+  let percentReel;
+  let percentNet;
+  if (percent === 23) {
+    percentReel = percent / 100;
+    percentNet = percentReel + 0.0689;
+  }
+  else if (percent === 25) {
+    percentNet = 0.334;
+  }
+  else if (percent === 15) {
+    percentNet = 17.5 / 100;
+  }
+  else if (percent === 45) {
+    percentNet = 81.9 / 100;
+  }
   // mensuel
   const brutMensuel = FuncCalcul.netEnBrut(netNumber, percentNet);
   // 0,2989%
